@@ -49,20 +49,25 @@ format:
 
 
 ## About Me!
+
+::: fragment
 - 💱 Previously: 
   - Economics at the University of Melbourne
   - Tutoring undergraduate economics
   - Assisting with data collection & curation for empirical economists
+:::
+::: fragment
 - 👩🏻 Outside of Research:
   - 🧗🏻‍♀️ Climbing, 🧘🏻‍♀️ Yoga, 👩🏻‍🍳 Foodie
   - 🎙️ Regular host on [The Random Sample](https://www.therandomsample.com.au/podcasts/) podcast
+:::
 
 ## About Me!
 
 ::: incremental
 - 📊 Research Interests
   - 🌰 Statistically sound, well-documented and low-friction adaptation of "alternative" data for research purposes.
-  - 🖇️ Data provenance models that capture both **statistical** decisions, and **computational** implementation decisions.
+  - 🖇️ Data provenance models that capture both **statistical** decisions, and **computational** implementation details.
 - 👩‍🎓 Thesis: **Unified Statistical Principles and Computational Tools for Data Harmonisation and Provenance**
   - Conceptual framework for redistributing numeric mass between categories in related statisical classifications
   - Software implementation in R
@@ -165,34 +170,48 @@ When curating and analysing harmonised data, there are a number of goals and con
 
 ## Proposed Approach: Task Abstraction
 
+::: fragment
+
 The **crossmap transform** takes *(data input)*:
 
 - numeric values which form a conceptually shared mass and are indexed by a specific set of keys (e.g. occupation codes), a **shared mass array**
 
+:::
+
+::: fragment
 and *(function)*:
 
 - redistributes the numeric values into a new set of index keys, according to a mapping, the **crossmap**, between the source and target keys
 
-producing *(output)*:
+:::
+
+::: fragment
+produces *(output)*:
 
 - a counter-factual/imputed **shared mass array** indexed by the target keys
+:::
 
-## Equivalent Encodings & Implications
-
-- **Computational graphs:** multi-partite graph visualisation
-- **Linear mappings:** matrix multiplication constraints
-- **Edge lists:** rectangular data wrangling tools
+## Insights from Equivalent Encodings
 
 ![](images/screenshot_poster-implications.png){fig-align="center"}
 
-## Framework Implications
+Crossmaps can be encoded as:
+
+::: incremental
+- **Computational graphs:** multi-partite graph visualisation
+- **Linear mappings:** matrix multiplication constraints
+- **Edge lists:** rectangular data wrangling tools
+:::
+
+
+## 🟢 Framework Implications
 
 ::: {.v-center-container}
 :::{layout="[[-5,88,-5],[-5,90,-5],[-5,10,10,20,-5], [-5,10,10,20,-5]]" layout-align="center"}
 
-[Domain Problem]{.button-green-light}
+[Domain Problem: *Ex-Post Harmonisation*]{.button-green-light}
 
-[Provenance Model]{.button-green}
+[Provenance Model: *Crossmaps*]{.button-green}
 
 [Documenting & Auditing]{.button-blue}
 
@@ -200,7 +219,7 @@ producing *(output)*:
 
 [Data Imputation Models]{.button-orange}
 
-[Floating Point]{.button-blue}
+[Floating Point Computation]{.button-blue}
 
 [Visual Encoding]{.button-blue}
 
@@ -209,7 +228,7 @@ producing *(output)*:
 :::
 :::
 
-## Conceptual and Statistical Implications
+## 🟠 Conceptual and Statistical Implications
 
 ::: {.columns}
 ::: {.column}
@@ -232,7 +251,7 @@ Crossmap (graph) properties could be used to quantify and explore:
 :::
 :::
 
-## Computational and Design Implications
+## 🔵 Computational and Design Implications
 
 ::: {.columns}
 ::: {.column width=70%}
@@ -282,7 +301,7 @@ Crossmap (graph) properties could be used to quantify and explore:
 
 ## Soon: Review of Data Provenance Approaches
 
-- Joint work with PhD Candidate Francis Nguyen, supervised by Prof. Tamara Munzner (UBC)
+- Joint work with PhD Candidate Francis Nguyen, supervised by Prof. Tamara Munzner at the InfoVis group in Dept. Computer Science, University of British Columbia
 - Aiming to describe approaches to data provenance across:
     - statistical theory
     - statistical computing
@@ -291,7 +310,7 @@ Crossmap (graph) properties could be used to quantify and explore:
 
 ## Publication Venues?
 
-🤔 Where to publish & share work on data harmonisation (and quality)?
+🤔 Where to publish & share work on data harmonisation, provenance and quality?
 
 ::: incremental
 
