@@ -301,25 +301,24 @@ Crossmap (graph) properties could be used to quantify and explore:
 
 ## Soon: Review of Data Provenance Approaches
 
+::: incremental
 - Joint work with PhD Candidate Francis Nguyen, supervised by Prof. Tamara Munzner at the InfoVis group in Dept. Computer Science, University of British Columbia
 - Aiming to describe approaches to data provenance across:
     - statistical theory
     - statistical computing
     - database systems
     - data analytics and visualisation
+:::
+
 
 ## Publication Venues?
 
 🤔 Where to publish & share work on data harmonisation, provenance and quality?
 
-::: incremental
-
 - **Data Science:** ACM/IMS Journal of Data Science\*, Harvard Data Science Review, ???
 - **CS/HCC:** IEEE VIS\*, CHI, ???
 - **Statistics & Statistical Programming:** R Journal\*, JSS^[Journal of Statistical Software], JCGS^[Journal of Computational and Graphical Statistics]
 - **Applied Venues:** e.g. "Data Reviews" in Australian Economic Review
-
-:::
 
 ## More on Crossmaps
 

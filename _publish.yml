@@ -1,0 +1,4 @@
+- source: talk_LMU-20240617.qmd
+  quarto-pub:
+    - id: ca3fe11d-43c3-4986-a438-f9aba855b3af
+      url: 'https://cynthiahuang.quarto.pub/lmu-2024'
