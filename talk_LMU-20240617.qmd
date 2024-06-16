@@ -1,0 +1,340 @@
+---
+title: Ex-Post Harmonisation and "Statistical" Data Provenance
+subtitle: "SoDa Lab Meeting, LMU Munich, 16 Jun 2024"
+author: 
+  - name: "Cynthia A. Huang"
+    orcid: 0000-0002-9218-987X
+    email: cynthia.huang@monash.edu
+    affiliations:
+      - ref: ebs
+affiliations:
+  - id: monash-soda
+    name: Monash University
+    department: Department of Economics
+    group: SoDa Labs
+    city: Melbourne
+    country: Australia
+    url: https://www.monash.edu/business/impact-labs/soda-labs
+  - id: ebs
+    name: Department of Econometrics and Business Statistics, Monash Business School
+bibliography: references.bib
+format:
+  presentation-revealjs+letterbox:
+    # width: 1600
+    # height: 900
+    theme: [default, style/custom.scss]
+    css: style/custom.css
+---
+
+# Introduction
+
+## Presentation Overview {visibility="hidden"}
+
+- About Me
+- Research Interests
+- Crossmaps Framework for Ex-Post Data Harmonisation
+
+## About Me!
+
+::: incremental
+- 👩‍🎓 Third Year PhD Candidate in Econometrics & Business Statistics, supervised by, and affiliated with: 
+  - [Prof. Rob Hyndman](https://robjhyndman.com), EBS
+    - [NUMBATs](https://numbat.space/about.html), Non-Uniform Monash *Business Analytics* Team
+  - [A.Prof Simon Angus](https://research.monash.edu/en/persons/simon-angus), Economics
+    - [SoDa Laboratories](https://www.monash.edu/business/impact-labs/soda-labs/about-us), *alternative data for social science insights*
+  - [Dr. Sarah Goodwin](https://research.monash.edu/en/persons/sarah-goodwin), Human Centered Computing
+    - [Embodied Visualisation group](https://www.monash.edu/it/hcc/embodied-visualisation), *immersive technologies for data analysis*
+  <!-- - Also supported by [Monash Data Futures Institute](https://www.monash.edu/data-futures-institute) -->
+::: 
+
+
+## About Me!
+- 💱 Previously: 
+  - Economics at the University of Melbourne
+  - Tutoring undergraduate economics
+  - Assisting with data collection & curation for empirical economists
+- 👩🏻 Outside of Research:
+  - 🧗🏻‍♀️ Climbing, 🧘🏻‍♀️ Yoga, 👩🏻‍🍳 Foodie
+  - 🎙️ Regular host on [The Random Sample](https://www.therandomsample.com.au/podcasts/) podcast
+
+## About Me!
+
+::: incremental
+- 📊 Research Interests
+  - 🌰 Statistically sound, well-documented and low-friction adaptation of "alternative" data for research purposes.
+  - 🖇️ Data provenance models that capture both **statistical** decisions, and **computational** implementation decisions.
+- 👩‍🎓 Thesis: **Unified Statistical Principles and Computational Tools for Data Harmonisation and Provenance**
+  - Conceptual framework for redistributing numeric mass between categories in related statisical classifications
+  - Software implementation in R
+:::
+
+## About Me!
+
+::: incremental
+- 📋 Collaborative work:
+  -  Review of Data Provenance approaches across CS and Statistics
+  -  Adapting web-scraped retail product & price data for public health research
+  -  Human in the Loop verification for data extraction from spreadsheets using Generative AI
+- 💡 Reproducible and reusable research and teaching tools:
+  - [learnr.academy](http://learnr.academy/modules/basics.html) built on Quarto & webR
+  - [Reproducibility for Economists](https://cynthiahqy.github.io/monash-quarto-aea/) also with Quarto
+:::
+
+# Thesis Background & Motivation
+
+## Harmonising and Integrating Data
+
+- Opportunities to combine existing data for analysis abound,
+- Existing literature exists on a spectrum from conceptual to applied,
+- with keywords such as **data** *preprocessing*, *cleaning*, *fusion*, *integration*, *harmonisation* etc.
+
+![](images/diagram_preprocessing-solutions.png){fig-align="center" height=350px}
+
+## Aspects of Ex-Post Harmonisation
+
+::: {.columns .v-center-container}
+::: {.fragment .column width="33%"}
+![](images/icon-official-stats.png){fig-align="center" height=200px style="margin: 0; padding: 0;"}
+
+*Defining or selecting mappings between classifications or taxonomies,*
+:::
+
+::: {.fragment .column width="33%"}
+![](images/icon-database.png){fig-align="center" height=200px style="margin: 0; padding: 0; "}
+
+Implementing and validating mappings on given data,
+:::
+
+::: {.fragment .column width="33%"}
+![](images/icon-IEEE-VIS.png){fig-align="center" height=200px style="margin: 0; padding: 0; "}
+
+Documenting and analysing the implemented mapping.
+:::
+:::
+
+## Aspects of Ex-Post Harmonisation {visibility="hidden"}
+<!-- 
+When curating and analysing harmonised data, there are a number of goals and constraints: -->
+
+- **statistical validity:**
+    - analysis robustness and sensitivity, implications of data imputation
+- **data handling:**
+    - correct implmentation of intended harmonisation strategy
+    - data enginnering, wrangling, validation
+- **transparency and provenance:**
+    - documentation of harmonisation strategy and decisions
+    - meeting reproducility, replicability and re-usability standards
+
+## Existing Conceptual Contributions 
+- Approaches and insights are scattered across "data science" fields:
+    - Multi-resolution, multi-phase and multi-source inference [@mengTrioInferenceProblems2014]
+    - Data wrangling workflows and domain specific languages [@kandelWranglerInteractivevisual2011; @wickhamTidyData2014]
+    - Guidelines for data quality and provenance for trustworthy research [@gebruDatasheetsDatasets2021; @pengReproducibleResearchComputational2011; @wilkinsonFAIRGuidingPrinciples2016]
+    - Frameworks for considering alternative preprocessing decisions[@steegenIncreasingTransparencyMultiverse2016; @blockerPotentialPerilsPreprocessing2013]
+
+## Existing Applied Contributions
+
+- Many attempts at domain-specific and general purpose tools exist:
+    - Survey Data Harmonisation [@kolczynskaCombiningMultipleSurvey2022]
+    - Data validation tools [@vanderlooDataValidationInfrastructure2021]
+    - Data provenance tracking and documentation [@lucchesiSmallsetTimelinesVisual2022]
+    - Interactive tools for *Multiverse Analysis*
+    [@sarmaMilliwaysTamingMultiverses2018; @liuBobaAuthoringVisualizing2021]
+
+# Ex-Post Harmonisation of Aggregate Statistics
+
+## Stylised Example
+
+![](images/diagram_ex-post-process.png){fig-align="center"}
+
+## Example: ANZSCO22 and ISCO8 Occupation Codes
+
+::: {layout-ncol="2"}
+![](images/image-isco-bigraph.png)
+
+![](images/image-isco-table.png)
+:::
+
+## Current Approach: Input/Output Comparison
+
+![](images/diagram_current-prov.png){fig-align="center"}
+
+## Proposed Alternative: Input & Function Capture
+
+![](images/diagram_crossmaps.png){fig-align="center"}
+
+## Proposed Approach: Task Abstraction
+
+The **crossmap transform** takes *(data input)*:
+
+- numeric values which form a conceptually shared mass and are indexed by a specific set of keys (e.g. occupation codes), a **shared mass array**
+
+and *(function)*:
+
+- redistributes the numeric values into a new set of index keys, according to a mapping, the **crossmap**, between the source and target keys
+
+producing *(output)*:
+
+- a counter-factual/imputed **shared mass array** indexed by the target keys
+
+## Equivalent Encodings & Implications
+
+- **Computational graphs:** multi-partite graph visualisation
+- **Linear mappings:** matrix multiplication constraints
+- **Edge lists:** rectangular data wrangling tools
+
+![](images/screenshot_poster-implications.png){fig-align="center"}
+
+## Framework Implications
+
+::: {.v-center-container}
+:::{layout="[[-5,88,-5],[-5,90,-5],[-5,10,10,20,-5], [-5,10,10,20,-5]]" layout-align="center"}
+
+[Domain Problem]{.button-green-light}
+
+[Provenance Model]{.button-green}
+
+[Documenting & Auditing]{.button-blue}
+
+[Interactive Tools]{.button-blue}
+
+[Data Imputation Models]{.button-orange}
+
+[Floating Point]{.button-blue}
+
+[Visual Encoding]{.button-blue}
+
+[Sensitivity and Robustness Analysis]{.button-orange}
+
+:::
+:::
+
+## Conceptual and Statistical Implications
+
+::: {.columns}
+::: {.column}
+Crossmap (graph) properties could be used to quantify and explore:
+
+
+::: {.incremental .smaller}
+
+- How does the degree and extent of imputation differ between crossmaps?
+- How robust are downstream results to alternative harmonisation designs?
+- How much imputation has been performed on a given dataset with a given crossmap?
+- Which observations in a harmonised dataset have undergone the most (or least) transformation?
+
+:::
+
+:::
+::: {.column}
+
+![](images/plot-isiccomb-split-by-income-groups.png)
+:::
+:::
+
+## Computational and Design Implications
+
+::: {.columns}
+::: {.column width=70%}
+
+- *data provenance documentation*
+    - multi-partite graph layouts
+    - graph summaries
+- *extracting mapping logic from existing scripts*
+    - manipulate data input
+    - parse AST into computational graph
+- *authoring and auditing interfaces*
+    - interactive (multi-table) data merging
+    - workflow constraints (missing values etc.)
+
+:::
+::: {.column width=30%}
+
+![](images/screenshot_visxprov-ctry-sankey-alluvial.png)
+
+![](images/screenshot_visxprov-ctry-proposed.png)
+
+![](images/diagram_missing-val-bigraph.png)
+:::
+:::
+
+# Discussion & Future Work
+
+## Current: Software Implementation
+
+::: {.columns}
+::: {.column width=40%}
+![](images/xmap-hex-sticker.png){height=550}
+:::
+::: {.column width=50%}
+
+**WIP**:
+
+-  Presenting at UseR! (Jul 8-11)
+-  Will be on CRAN (soon), with accompanying R Journal paper
+
+**Package goals:**
+
+- implements graph, matrix & table representation in R, with symbolic (fractional) weights
+- worked examples in vignettes
+:::
+:::
+
+## Soon: Review of Data Provenance Approaches
+
+- Joint work with PhD Candidate Francis Nguyen, supervised by Prof. Tamara Munzner (UBC)
+- Aiming to describe approaches to data provenance across:
+    - statistical theory
+    - statistical computing
+    - database systems
+    - data analytics and visualisation
+
+## Publication Venues?
+
+🤔 Where to publish & share work on data harmonisation (and quality)?
+
+::: incremental
+
+- **Data Science:** ACM/IMS Journal of Data Science\*, Harvard Data Science Review, ???
+- **CS/HCC:** IEEE VIS\*, CHI, ???
+- **Statistics & Statistical Programming:** R Journal\*, JSS^[Journal of Statistical Software], JCGS^[Journal of Computational and Graphical Statistics]
+- **Applied Venues:** e.g. "Data Reviews" in Australian Economic Review
+
+:::
+
+## More on Crossmaps
+
+::: {.columns}
+::: {.column}
+![](images/screenshot-researchtab.png)
+
+:::
+::: {.column}
+![Submitted to ACM/IMS Journal of Data Science](images/screenshot_jds-cover.png)
+
+<!-- ![Presented at Australian Statistical Conference 2023](images/asc-poster.png){fig-align="center" height=600px} -->
+:::
+:::
+
+## Thanks for Listening!
+
+:::: columns
+::: {.column width=70%}
+Connect with me (and other cool Monash folks):
+
+- *🇩🇪 LMU until Weds, June 26*
+- 🇦🇹 UseR!, Salzburg (Jul 8-11)
+- 🇺🇸 JSM, Portland (Aug 3-9)
+- 🇺🇸 posit::conf(2024), Seattle (Aug 12-14)
+- 🇨🇦 UBC, Vancouver, (Jul-Nov)
+- 🌏 ???, March 2025 onwards...
+
+Or online: `@cynthiahqy` & [`cynthiahqy.com`](https://www.cynthiahqy.com)
+:::
+
+::: {.column width=30%}
+![](images/headshot-cynthia.jpg){style="border-radius:50%" height="400px"}
+:::
+::::
+
+## References
