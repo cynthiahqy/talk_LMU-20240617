@@ -166,7 +166,7 @@ When curating and analysing harmonised data, there are a number of goals and con
 
 ## Proposed Alternative: Input & Function Capture
 
-![](images/diagram_crossmaps.png){fig-align="center"}
+![](images/diagram_crossmap-transform-latex.png){fig-align="center"}
 
 ## Proposed Approach: Task Abstraction
 
@@ -320,7 +320,7 @@ Crossmap (graph) properties could be used to quantify and explore:
 - **Statistics & Statistical Programming:** R Journal\*, JSS^[Journal of Statistical Software], JCGS^[Journal of Computational and Graphical Statistics]
 - **Applied Venues:** e.g. "Data Reviews" in Australian Economic Review
 
-## More on Crossmaps
+## More on Crossmaps {visibility="hidden"}
 
 ::: {.columns}
 ::: {.column}
