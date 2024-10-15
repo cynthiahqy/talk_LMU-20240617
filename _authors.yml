@@ -1,0 +1,16 @@
+author: 
+  - name: "Cynthia A. Huang"
+    orcid: 0000-0002-9218-987X
+    email: cynthia.huang@monash.edu
+    affiliations:
+      - ref: ebs
+affiliations:
+  - id: monash-soda
+    name: Monash University
+    department: Department of Economics
+    group: SoDa Labs
+    city: Melbourne
+    country: Australia
+    url: https://www.monash.edu/business/impact-labs/soda-labs
+  - id: ebs
+    name: Department of Econometrics and Business Statistics, Monash Business School
