@@ -1,0 +1,14 @@
+---
+title: Ex-Post Harmonisation and "Statistical" Data Provenance
+talk:
+  date: 2024-06-17
+  venue: SoDa Lab Group Meeting, LMU
+  location: Munich (Germany)
+  format: in-person, 1 hour presentation & discussion
+repo:
+  remote: git@github.com:cynthiahqy/talk_LMU-20240617.git
+  local: talk_LMU-20240617
+slides:
+  html: https://cynthiahuang.quarto.pub/lmu-2024
+  source: talk_LMU-20240617.qmd
+---
